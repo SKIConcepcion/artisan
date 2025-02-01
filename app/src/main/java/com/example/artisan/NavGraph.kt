@@ -27,3 +27,5 @@ fun NavGraph() {
 @Serializable
 object LoginScreen
 
+@Serializable
+object HomeScreen
