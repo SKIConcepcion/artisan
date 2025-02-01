@@ -2,4 +2,9 @@
 <resources>
 
     <style name="Theme.Artisan" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.App.SplashScreen" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/artisan_logo_splash</item>
+        <item name="postSplashScreenTheme">@style/Theme.Artisan</item>
+    </style>
 </resources>
