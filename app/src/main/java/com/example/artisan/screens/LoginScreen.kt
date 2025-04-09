@@ -35,6 +35,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextStyle
@@ -53,6 +54,12 @@ import com.example.artisan.HomeScreen
 
 @Composable
 fun LoginScreen(navController: NavHostController, userViewModel: UserViewModel) {
+
+    val configuration = LocalConfiguration.current
+    val screenHeight = configuration.screenHeightDp.dp
+    val topSpacerHeight = screenHeight * 0.25f
+    val bottomSpacerHeight = screenHeight * 0.2f
+
     var email by remember { mutableStateOf("sean@gmail.com") }
     var password by remember { mutableStateOf("123") }
 
@@ -66,10 +73,13 @@ fun LoginScreen(navController: NavHostController, userViewModel: UserViewModel) 
         ) {
 
             Logo()
-            Spacer(modifier = Modifier.height(230.dp))
-            Column (verticalArrangement = Arrangement.spacedBy(10.dp)){
+
+            Spacer(modifier = Modifier.height(topSpacerHeight))
+
+            Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 EmailTextField(email) { email = it }
                 PasswordTextField(password) { password = it }
+
                 LoginButton(onClick = {
                     userViewModel.loginUser(email, password) { isSuccess ->
                         if (isSuccess) {
@@ -81,9 +91,10 @@ fun LoginScreen(navController: NavHostController, userViewModel: UserViewModel) 
                         }
                     }
                 })
-
             }
-            Spacer(modifier = Modifier.height(240.dp))
+
+            Spacer(modifier = Modifier.height(bottomSpacerHeight))
+
             SignupDirectory()
 
 
