@@ -7,4 +7,4 @@
 ### Tech Stack
 [![Skills](https://skillicons.dev/icons?i=androidstudio,dart,firebase,flutter&perline=10)](https://skillicons.dev) <br/><br/>
 
-🔗 **[Click here to visit Github repository](https://github.com/SeanConcepcion29/artisan)**
+🔗 **[Click here to access docs and apk](https://drive.google.com/drive/folders/1Q-5oSe8tmkWURqOQ3q2WT7Ej-2bUuNs7?usp=sharing)**
